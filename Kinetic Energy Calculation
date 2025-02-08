@@ -1,0 +1,47 @@
+# include <stdio.h>
+# include <math.h>
+
+
+int TimetoReachGround() {
+   
+    //float gravity = 9.8; //gravity constant
+    float time;
+    float height;
+    float velocity;
+    float mass;
+    float energy;
+
+//Height Input
+    printf("Enter the height of the drop in meters: ");  
+    scanf("%f", &height);
+    
+//Calculation of fall
+    time = sqrt(2 * height / 9.8);
+    
+//Mass Calculation   
+    printf("Enter the mass of the object in kilograms: ");
+    scanf("%f", &mass);  
+    
+//Velocity Calculation   
+    velocity = sqrt(2 * 9.8 * time);
+   
+//Joules Calculation   
+    energy = (mass * pow(velocity, 2) / 2);
+    
+//Results
+    printf("The time taken by an object weighing %.2f kg to reach the ground when dropped from a height of %.2f meters is %.2f seconds.", mass, height, time); 
+    
+    printf("The velocity of the object when it hits the ground is %.2f m/s.", velocity);
+    
+    printf("The kinetic energy at the moment of impact with the ground is %.2f joules.", energy);
+
+    return 0;
+}
+
+int main(){
+
+    TimetoReachGround();
+    return 0;
+
+   
+}
